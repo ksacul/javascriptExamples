@@ -1,0 +1,111 @@
+//Intro
+confirm("For years, the great country of Great Toaster thrived with much trade and happiness. The country soon became immensely rich due to it's lucridious trade. Fortunately, the wealth brought only happiness to the residents of Great Toaster, and the country rose in population. Not long after the expansion of the country, the greedy and merciless beast Argumenthus came to reside in the neighboring mountains. He promised to raze and level the country if not for the sacrifice of 20 men and women from Great Toaster and treasure galore each year. With Argumenthus in the mountains around Great Toaster, traders were afraid to continue their business in Great Toaster, so they left, leaving Great Toaster with small income, very little food, and resources. For years Great Toaster has lived in this state of constant peril, but now, you, the champion of Great Toaster has been called upon to rid the once glorious country of the blight known as Argumenthus and return Great Toaster to it's former glory.");
+
+//Class Choice
+var classChoice = prompt("What is Your Choice of Class Against the Dreaded Monster, Argumenthus, Ranger, Knight, Rouge, or Mage?").toLowerCase();
+//Ranger Class
+switch(classChoice){
+case 'ranger':
+  confirm("Great choice! You will rely on skill and finese to kill the monster. May you come back victorious!");
+  var arrowType = prompt("Pick your special arrows now. These will help you on your journey. Will you take Fire Arrows to burn the monster to the ground? Or shall you take Ice Arrows to aid you in dodging the monster's crushing swipes?").toLowerCase();
+  switch(arrowType){
+    case 'fire arrows':
+      confirm("You must use these wisely, you only have 5 so don't use them unless you must!");
+      break;
+      case 'ice arrows':
+        confirm("Be careful, these 5 arrows are very rare, and can only be found in the coldest sorcerey temples down south. Use them sparringly and only when you must.");
+        break;
+        default:
+        confirm("You must pick one of the two arrow types.");
+        throw new error();
+  }
+  break;
+//Knight Class
+  case 'knight':
+    confirm("Wise decision. You shall use your strength to your advatage. Shall you come back victorious as a hero.");
+    var potionType = prompt("Will you choose Health Potions to aid you during your fight with the beast, ot shall you choose Strength Potions to shorten your fight and strengthen your blows?").toLowerCase();
+    switch(potionType){
+      case 'health potion':
+        confirm("Consume this only when you must, for you only get one. It is powerful and can save you from the brink of death. Now slay the beast.");
+        break;
+      case 'strength potion':
+        confirm ("So you choose to empower your blows and aid your attack, brave. You shall only recieve one, so use it wisely.");
+        break;
+        default:
+        confirm("You must choose one of the potions.");
+        throw new error();
+    }
+    break;
+//Rouge Class
+    case 'rouge':
+      confirm("Intresting, your choose dexterity and stealth over strength, inteligence, or skill and sight. You shall have an intresting fight with the beast, many consider this the hardest class to preform in, and you must use your speed and stealth to rid our great country of Argumenthus.");
+      var boostType = prompt("To aid you on your journey, will you choose Stealth Potions or Poisoned Blades?");
+      switch(boostType){
+        case 'poisoned blades':
+          confirm("Use these only one the monsters. They give you a +1 attack. I don't want you killing anyone. Now off with you.");
+          break;
+        case 'stealth potions':
+          confirm("You have only 2 of these, and they only last for 30 minutes. Use them, to find his weakness and slay him. Now begone.");
+          break;
+          default:
+          confirm("You must select one of the items.");
+          throw new error();
+      }
+      break;
+//Mage Class
+      case 'mage':
+        confirm("You are a educated scholar in the mystical, the king will be pleased to know that you've come to our service. I shall supply you with a platoon of our finest men to aid you on your journey.");
+        var spellBooks = prompt("In our royal library, we have 4 different elemental spell books, The Fire Book, The Air Book, The Earth Book, and The Ice Book. One of them is at your diposal to aid you on your journey to slay Argumenthus.").toLowerCase();
+        switch(spellBooks){
+          case 'the fire book':
+            confirm("Ahh. so you choose the power of fire to rid our country of the great monster. May you come back alive and victorious.");
+            break;
+          case 'the air book':
+            confirm("Use the power of air to defeat Argumenthus and save Great Toaster! Glory to you!!!");
+            break;
+          case 'the earth book':
+            confirm("The king shall be pleased. Many thanks for helping us rid our country of that beast.");
+            break;
+          case 'the ice book':
+            confirm("Use the frigid powers of ice to kill Argumenthus. Now, take your escort and may you come back victorious!");
+            break;
+            default:
+            confirm("We don't have that book. I'm sorry. Please pick one of our avaliable spell books.");
+            throw new error();
+        }
+    break;
+    default:
+    confirm("Please pick one of the avaliable classes. Thanks.");
+    throw new error();
+}
+
+confirm("And so you began your journey.");
+var events = (Math.random() + 1.7);
+if(events > 2){
+console.log(events);
+  confirm("After traveling for one day towards the mountains, you stop to rest, and suddenly, an ogre appears out of no where and advances towards you. Oh no, you're trapped against the tree. You must fight the grotesque ogre.");
+var slaying = true;
+var youHit = Math.floor(Math.random()*2);
+var damageThisRound = Math.floor(Math.random() * 5 + 1);
+var totalDamage = 0;
+while(slaying){
+    if (youHit){
+        confirm("You Hit The Ogre For " + damageThisRound + " Damage!");
+        totalDamage += damageThisRound;
+        if(totalDamage >= 4){
+            confirm("You slew the ogre!!!");
+            slaying = false;
+        }else{
+            youHit = Math.floor(Math.random() * 2);
+        }
+    }else{
+    confirm("The ogre killed you. Play again?");
+    slaying = false;
+    throw new error();
+    }
+}
+}else{
+  confirm("You continue on your adventure. You can almost see the mountian's base!");
+}
+confirm("You arrive at the base of the mountain at nightfall. Exhausted from the journey there, you set up a tent and fall asleep.");
+confirm("The Next Morning...");
